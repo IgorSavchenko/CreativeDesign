@@ -144,8 +144,8 @@ initMap();
 // Scroll Reveal effects
 window.sr = ScrollReveal({ reset: true , mobile: true});
 sr.reveal( '.navbar', { duration: 500 }, 250);
-sr.reveal('.navbar-item', { container: '.navbar-menu' , duration: 2000});
-sr.reveal('.navbar-item', { container: '.navbar' , rotate: {y: 90}, duration: 2500});
+// sr.reveal('.navbar-item', { container: '.navbar-menu' , duration: 2000});
+// sr.reveal('.navbar-item', { container: '.navbar' , rotate: {y: 90}, duration: 2500});
 sr.reveal('.about', { duration: 500 , viewOffset: { top: 100, right: 0, bottom: 100, left: 0 }});
 sr.reveal('.works', { duration: 500 , viewOffset: { top: 100, right: 0, bottom: 100, left: 0 }});
 sr.reveal('.contact', { duration: 500 , origin: 'left', distance: '500px'});
