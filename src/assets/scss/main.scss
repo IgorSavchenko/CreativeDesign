@@ -62,7 +62,7 @@ body {
   // height: 100vh;
   padding-top: 35px;
   height: 1170px;
-  background: url('/assets/img/bgd.jpg') center center no-repeat;
+  background: url('../img/bgd.jpg') center center no-repeat;
   background-size: cover;
   &-title {
     font-family: 'Proxima Nova', Georgia, sans-serif;
@@ -162,7 +162,7 @@ body {
 }
 
 .works {
-  background: url('/assets/img/DeathtoStock_Wired3.jpg') 50% 50% no-repeat;
+  background: url('../img/DeathtoStock_Wired3.jpg') 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -205,7 +205,7 @@ body {
     padding: 0;
     &--hero {
       max-width: 410px;
-      background: url('/assets/img/unsplash_523ae1f5502d6_1.jpg') center center no-repeat;
+      background: url('../img/unsplash_523ae1f5502d6_1.jpg') center center no-repeat;
       background-size: cover;
       flex-direction: column;
       justify-content: flex-start;
