@@ -335,15 +335,71 @@ body {
     height: 90px;
     background: rgba(#ffffff, 0.2);
     display: inline-block;
+    transform: translateX(260px);
+    transition: transform 1s ease;
+    &:hover {
+      transform: translateX(-10px);
+    }
     & span {
       display: inline-block;
       width: 90px;
       height: 100%;
       background: rgba(#9f9acf, 1);
+      position: relative;
+      & img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
     & p {
+      margin: 0;
+      padding: 0;
       display: inline-block;
       text-align: center;
+      position: relative;
+      // vertical-align: middle;
+    }
+    &--adr {
+      top: 220px;
+    }
+    &--tel {
+      top: 310px;
+    }
+  }
+  &-reference {
+    width: 85px;
+    height: 85px;
+    background: rgba(#9f9acf, 1);
+    position: absolute;
+    bottom: 50px;
+    right: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer {
+  height: 185px;
+  background: rgba(#9f9acf, 1);
+  & .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-text {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  &-social {
+    display: inline-block;
+    &-link {
+      padding: 0 10px;
     }
   }
 }

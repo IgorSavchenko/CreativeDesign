@@ -9515,6 +9515,12 @@ body {
   height: 90px;
   background: rgba(255, 255, 255, 0.2);
   display: inline-block;
+  transform: translateX(260px);
+  transition: transform 1s ease;
+}
+
+.contact-slide:hover {
+  transform: translateX(-10px);
 }
 
 .contact-slide span {
@@ -9522,11 +9528,69 @@ body {
   width: 90px;
   height: 100%;
   background: #9f9acf;
+  position: relative;
+}
+
+.contact-slide span img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .contact-slide p {
+  margin: 0;
+  padding: 0;
   display: inline-block;
   text-align: center;
+  position: relative;
+}
+
+.contact-slide--adr {
+  top: 220px;
+}
+
+.contact-slide--tel {
+  top: 310px;
+}
+
+.contact-reference {
+  width: 85px;
+  height: 85px;
+  background: #9f9acf;
+  position: absolute;
+  bottom: 50px;
+  right: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  height: 185px;
+  background: #9f9acf;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-text {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social {
+  display: inline-block;
+}
+
+.footer-social-link {
+  padding: 0 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
