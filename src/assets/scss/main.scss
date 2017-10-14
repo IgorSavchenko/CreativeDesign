@@ -1,0 +1,349 @@
+// compileOnSave
+//======================================================
+// variables
+$c-custom: #3c3c3c;
+//fonts
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Mark Simonson - Proxima Nova Thin-webfont.woff2') format('woff2'),
+       url('../fonts/Mark Simonson - Proxima Nova Thin-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Mark Simonson - Proxima Nova Alt Regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Mark Simonson - Proxima Nova Semibold-webfont.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Mark Simonson - Proxima Nova Alt Bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/Mark Simonson - Proxima Nova Alt Black-webfont.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+//bulma
+@import "bulma/bulma.sass";
+//helper
+@import "helpers/media-queries";
+// sections
+//@import "sections/main";
+// blocks
+@import "blocks/slider";
+//======================================================
+//styles to all elements
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//styles to body
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $c-custom;
+}
+.header {
+  // height: 100vh;
+  padding-top: 35px;
+  height: 1170px;
+  background: url('/assets/img/bgd.jpg') center center no-repeat;
+  background-size: cover;
+  &-title {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 72px;
+    text-transform: uppercase;
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 400;
+    text-align: center;
+    margin-top: 300px;
+  }
+  &-text {
+    font-size: 30px;
+    font-style: italic;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+.container {
+  max-width: 1170px;
+}
+.navbar {
+  background: transparent;
+  &-img {
+    max-width: 100%;
+    height: auto;
+  }
+  &-item {
+    color: #ffffff;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    & img {
+      max-height: 4rem;
+    }
+  }
+}
+
+.about {
+  background: #ffffff;
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  @include desktop-min {
+    justify-content: space-between;
+    padding-bottom: 120px;
+  }
+  flex-wrap: wrap;
+  &-card {
+    position: relative;
+  }
+  &-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  &-info {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    & img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &-title {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 36px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 100%;
+  }
+  &-text {
+    font-size: 20px;
+    color: #665f60;
+
+  }
+  &-description {
+    max-width: 635px;
+    margin: 75px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    & .button {
+      width: 195px;
+      margin: 80px auto 0;
+      font-size: 20px;
+      font-style: italic;
+    }
+  }
+}
+
+.works {
+  background: url('/assets/img/DeathtoStock_Wired3.jpg') 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-header {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title {
+    margin: 35px 0 60px;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 36px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  & .button {
+    background: transparent;
+    margin-bottom: 50px;
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  &-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 760px;
+    margin: 0;
+    padding: 0;
+    &--hero {
+      max-width: 410px;
+      background: url('/assets/img/unsplash_523ae1f5502d6_1.jpg') center center no-repeat;
+      background-size: cover;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 800px;
+      color: #ffffff;
+      padding: 115px 0;
+    }
+    &-title {
+      margin: 0;
+      padding: 0;
+      font-family: 'Proxima Nova', Georgia, sans-serif;
+      font-size: 36px;
+      text-transform: uppercase;
+      margin-bottom: 115px;
+    }
+    &-text {
+      text-align: center;
+      font-style: italic;
+      font-size: 18px;
+      & span {
+        display: block;
+        font-style: normal;
+        font-weight: bold;
+      }
+    }
+  }
+  &-item {
+    max-width: 380px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // flex-wrap: wrap;
+    // max-width: 50%;
+    background: #ffffff;
+    // padding: 95px;
+    &--grey {
+      background: #dbdbdb;
+    }
+    &-title {
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #665f60;
+    }
+    &-text {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      font-style: italic;
+      color: #665f60;
+      // max-width: 215px;
+    }
+  }
+}
+
+.contact {
+  position: relative;
+  height: 900px;
+  background: rgba(#9f9acf, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-header {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title {
+    margin: 35px 0 60px;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 36px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &-form {
+    margin-top: 260px;
+    max-width: 860px;
+    z-index: 1;
+    opacity: 0.3;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &-input {
+    width: calc(50% - 15px);
+    height: 56px;
+    margin-bottom: 25px;
+    padding-left: 25px;
+  }
+  &-textarea {
+    width: 100%;
+    padding-left:25px;
+    padding-top: 25px;
+  }
+  & .button {
+    margin: 55px auto;
+    text-transform: uppercase;
+    background: rgba(#9f9acf, 1);
+    color: #ffffff;
+  }
+  &-map {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &-slide {
+    position: absolute;
+    right: 0;
+    width: 350px;
+    height: 90px;
+    background: rgba(#ffffff, 0.2);
+    display: inline-block;
+    & span {
+      display: inline-block;
+      width: 90px;
+      height: 100%;
+      background: rgba(#9f9acf, 1);
+    }
+    & p {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}

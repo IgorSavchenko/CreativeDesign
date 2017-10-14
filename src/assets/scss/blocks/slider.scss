@@ -1,0 +1,44 @@
+// main: ../main.scss
+.slider {
+  width: 730px;
+  margin: 0 auto;
+  background-color: transparent;
+  &-item {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  &-navigation {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 0;
+  }
+  &-button {
+    width: 10px;
+	  height: 10px;
+    border: 1px solid #ffffff;
+	  border-radius: 5px;
+    padding: 0;
+    margin: 0 5px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    &--active {
+      background-color: #ffffff;
+    }
+  }
+  & button {
+    // position: absolute;
+    // top: 50%;
+    &--prev {
+      // left: 0;
+    }
+    &--next {
+      // right: 0;
+    }
+  }
+}
