@@ -1,7 +1,10 @@
 // compileOnSave
 //======================================================
 // variables
-$c-custom: #3c3c3c;
+$c-custom: #665f60;
+$c-purple: #b6b2d7;
+$c-light-grey: #ebebeb;
+$c-white: #ffffff;
 //fonts
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
 @font-face {
@@ -58,18 +61,23 @@ body {
   line-height: 1.5;
   color: $c-custom;
 }
+.container {
+  max-width: 1170px;
+}
+//======================================================
+// section header
 .header {
-  // height: 100vh;
   padding-top: 35px;
-  height: 1170px;
-  background: url('../img/bgd.jpg') center center no-repeat;
+  height: 1070px;
+  background: $c-purple url('../img/bgd.jpg') center center no-repeat;
   background-size: cover;
+  outline: none;
   &-title {
     font-family: 'Proxima Nova', Georgia, sans-serif;
     font-size: 72px;
     text-transform: uppercase;
     line-height: 60px;
-    color: #ffffff;
+    color: $c-white;
     font-size: 400;
     text-align: center;
     margin-top: 300px;
@@ -77,58 +85,77 @@ body {
   &-text {
     font-size: 30px;
     font-style: italic;
-    color: #ffffff;
+    color: $c-white;
     text-align: center;
     margin-top: 30px;
   }
 }
-.container {
-  max-width: 1170px;
-}
 .navbar {
   background: transparent;
-  &-img {
-    max-width: 100%;
-    height: auto;
+  padding: 0 30px;
+  &-brand .navbar-item:hover {
+    background: transparent;
   }
-  &-item {
-    color: #ffffff;
-    font-family: 'Proxima Nova', Georgia, sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
-    &:not(:first-child) {
-      // background: rgba(#9f9acf, 1);
+  &-menu {
+    background: transparent;
+    & .navbar-item {
+      color: $c-white;
+      font-family: 'Proxima Nova', Georgia, sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      &:hover, &.is-active {
+        color: $c-custom;
+        background: transparent;
+      }
     }
-    & img {
-      max-height: 4rem;
+  }
+  &-burger {
+    span{
+      background: white;
+      width: 25px;
+      height: 2px;
+    }
+    &.is-active span:nth-child(1) {
+      margin-top: -12px;
     }
   }
 }
-
+//======================================================
+// section about
 .about {
-  background: #ffffff;
-  padding-top: 120px;
-  display: flex;
-  justify-content: center;
-  @include desktop-min {
-    justify-content: space-between;
-    padding-bottom: 120px;
+  background: $c-white;
+  padding: 60px 15px;
+  outline: none;
+  & .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include tablet-landscape-min {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding: 120px 0;
+    }
   }
-  flex-wrap: wrap;
   &-card {
     position: relative;
+    overflow: hidden;
   }
   &-img {
     display: block;
     max-width: 100%;
     height: auto;
+    transition: transform 2s ease;
+    &:hover {
+      transform: scaleX(1.1);
+    }
   }
   &-info {
     position: absolute;
     top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-    & img {
+    left: 0;
+    right: 0;
+    margin: auto;
+    & svg {
       display: block;
       margin: 0 auto;
     }
@@ -138,88 +165,89 @@ body {
     font-size: 36px;
     line-height: 47px;
     text-transform: uppercase;
-    color: #ffffff;
-    margin-top: 30px;
+    color: $c-white;
+    margin: 30px auto;
     text-align: center;
-    max-width: 100%;
+    width: 250px;
   }
   &-text {
     font-size: 20px;
-    color: #665f60;
-
+    color: $c-custom;
   }
   &-description {
     max-width: 635px;
-    margin: 75px 30px;
+    margin: 30px 15px;
+    @include tablet-landscape-min {
+      margin: 30px;
+    }
+    @include desktop-min {
+      margin-top: 75px;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     & .button {
       width: 195px;
-      margin: 80px auto 0;
       font-size: 20px;
       font-style: italic;
+      transition: all 0.5s ease;
+      margin-top: 30px;
+      @include tablet-landscape-min {
+        margin-top: 45px;
+      }
+      @include desktop-min {
+        margin-top: 80px;
+      }
+      &:hover {
+        background: $c-purple;
+        color: $c-white;
+      }
     }
   }
 }
-
-.works {
-  background: url('../img/DeathtoStock_Wired3.jpg') 50% 50% no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  &-header {
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  &-title {
-    margin: 35px 0 60px;
-    font-family: 'Proxima Nova', Georgia, sans-serif;
-    font-size: 36px;
-    line-height: 47px;
-    text-transform: uppercase;
-    color: #ffffff;
-  }
-  & .button {
-    background: transparent;
-    margin-bottom: 50px;
-  }
-}
-
+//======================================================
+// section services
 .services {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  &-box {
+  .container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 760px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    @include tablet-landscape-min {
+      flex-direction: row;
+    }
+  }
+  &-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include mobile-landscape-min {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include tablet-landscape-min {
+      max-width: calc(760 / 1170 * 100%);
+    }
     &--hero {
-      max-width: 410px;
-      background: url('../img/unsplash_523ae1f5502d6_1.jpg') center center no-repeat;
-      background-size: cover;
+      order: -1;
+      max-width: 100%;
+      @include tablet-landscape-min {
+        max-width: calc(410 / 1170 * 100%);
+        order: 0;
+      }
+      height: 800px;
+      padding: 115px 25px 0;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: 800px;
-      color: #ffffff;
-      padding: 115px 0;
+      background: url('../img/unsplash_523ae1f5502d6_1.jpg') center center no-repeat;
+      background-size: cover;
+      color: $c-white;
     }
     &-title {
-      margin: 0;
-      padding: 0;
       font-family: 'Proxima Nova', Georgia, sans-serif;
       font-size: 36px;
       text-transform: uppercase;
@@ -237,7 +265,10 @@ body {
     }
   }
   &-item {
-    max-width: 380px;
+    width: 100%;
+    @include tablet-min {
+      width: 50%;
+    }
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -245,8 +276,14 @@ body {
     align-items: center;
     // flex-wrap: wrap;
     // max-width: 50%;
-    background: #ffffff;
+    background: $c-white;
     // padding: 95px;
+    &:nth-child(3) {
+      order: -1;
+      @include tablet-min {
+        order: 0;
+      }
+    }
     &--grey {
       background: #dbdbdb;
     }
@@ -256,19 +293,93 @@ body {
       font-size: 24px;
       font-weight: bold;
       text-transform: uppercase;
-      color: #665f60;
+      color: $c-custom;
     }
     &-text {
       margin: 0;
       padding: 0;
       font-size: 18px;
       font-style: italic;
-      color: #665f60;
-      // max-width: 215px;
+      color: $c-custom;
+      text-align: center;
+      max-width: 200px;
     }
   }
 }
-
+//======================================================
+// section works
+.works {
+  & .container {
+    position: relative;
+    width: 100%;
+  }
+  background: url('../img/DeathtoStock_Wired3.jpg') 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &-header {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title {
+    margin: 35px 0 60px;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 36px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: $c-white;
+  }
+  & .button {
+    background: transparent;
+    margin-bottom: 50px;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    text-transform: capitalize;
+    transition: all 0.5s ease;
+    &:hover {
+      background: white;
+      color: $c-custom;
+    }
+  }
+}
+//======================================================
+// section team
+.team {
+  background: $c-light-grey;
+  &-header {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &-title {
+    margin: 35px 0 60px;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-size: 36px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: $c-custom;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-name {
+    
+  }
+}
+//======================================================
+// section contact
 .contact {
   position: relative;
   height: 900px;
@@ -289,7 +400,7 @@ body {
     font-size: 36px;
     line-height: 47px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $c-white;
   }
   &-form {
     margin-top: 260px;
@@ -318,7 +429,7 @@ body {
     margin: 55px auto;
     text-transform: uppercase;
     background: rgba(#9f9acf, 1);
-    color: #ffffff;
+    color: $c-white;
   }
   &-map {
     display: block;
@@ -336,7 +447,7 @@ body {
     right: 0;
     width: 350px;
     height: 90px;
-    background: rgba(#ffffff, 0.2);
+    background: rgba($c-white, 0.2);
     display: inline-block;
     transform: translateX(260px);
     transition: transform 1s ease;
@@ -383,7 +494,8 @@ body {
     justify-content: center;
   }
 }
-
+//======================================================
+// section footer
 .footer {
   height: 185px;
   background: rgba(#9f9acf, 1);
@@ -394,7 +506,7 @@ body {
     justify-content: space-between;
   }
   &-text {
-    color: #ffffff;
+    color: $c-white;
     font-size: 18px;
     margin: 0;
     padding: 0;

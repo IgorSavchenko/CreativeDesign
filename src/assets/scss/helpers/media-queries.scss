@@ -2,11 +2,17 @@
 //mobile first!!!!!!!!!!!!!!!!!
 // Settings
 
+$mobile-l-width: 480px;
 $tablet-p-width: 768px;
 $tablet-l-width: 1024px;
 $desktop-width:  1200px;
 
 // Mixins
+@mixin mobile-landscape-min{
+	@media (min-width: #{$mobile-l-width}){
+		@content;
+	}
+}
 @mixin tablet-min{
 	@media (min-width: #{$tablet-p-width}){
 		@content;
